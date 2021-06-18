@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </com.google.android.material.tabs.TabLayout>
-        <com.kiloway.klwbaseproject.view.NoScrollViewPager
+        <com.kiloway.androidlibrary.view.view.NoScrollViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             >
-        </com.kiloway.klwbaseproject.view.NoScrollViewPager>
+        </com.kiloway.androidlibrary.view.view.NoScrollViewPager>
         >
 </LinearLayout>

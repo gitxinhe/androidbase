@@ -24,7 +24,6 @@ import butterknife.ButterKnife;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
-
 /**
  * Created by 10158 on 2020/12/17.
  */

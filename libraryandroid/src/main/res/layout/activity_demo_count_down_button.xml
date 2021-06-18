@@ -5,15 +5,4 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
    >
-    <com.kiloway.klwbaseproject.view.button.CountDownButton
-        android:id="@+id/btn_count_down"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        app:backColor="@color/appcolor"
-        android:text="获取验证码"
-        app:countDownSeconds ="10"
-        android:layout_height="50dp"
-        >
-
-    </com.kiloway.klwbaseproject.view.button.CountDownButton>
 </LinearLayout>

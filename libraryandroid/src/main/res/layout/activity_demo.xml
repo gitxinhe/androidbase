@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kiloway.klwbaseproject.view.ReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_select1_single"
+                style="@style/normal_linearLayout"
+                android:layout_marginTop="0dp">
+                <com.kiloway.mylibrary.MyCircle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </com.kiloway.mylibrary.MyCircle>
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="选择1(单个)" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_select2_single"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="选择2(单个)" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_province_select"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="城市选择" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sure_select"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="确认弹窗" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_arrow_left" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_qrcode"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="二维码识别" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_finger"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="指纹认证" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_see_big_image"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="查看大图" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_big_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/icon_default"
+                    app:riv_corner_radius="5dp"></com.makeramen.roundedimageview.RoundedImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_config_service_url"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="配置服务器地址" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_config_reader"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="读写器配置" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_web_view"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="加载网页" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_tab"
+                style="@style/normal_linearLayout">
+
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="Tab栏" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_button"
+                style="@style/normal_linearLayout">
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="按钮" />
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_count_down"
+                style="@style/normal_linearLayout">
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="倒计时" />
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.kiloway.klwbaseproject.view.ReboundScrollView>
+</LinearLayout>

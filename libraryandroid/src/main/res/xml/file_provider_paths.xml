@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<resources>
+    <external-path
+        path=""
+        name="sdcard_files" />
+    &lt;!&ndash;相机相册裁剪&ndash;&gt;
+    <external-files-path
+        path="file/"
+        name="camera_has_sdcard" />
+    <external-files-path
+        path="file/"
+        name="appInstall" />
+    <files-path
+        path=""
+        name="camera_no_sdcard" />
+</resources>-->
+<resources>
+    <paths>
+        <!-- 这个是保存拍照图片的路径,必须配置。 -->
+        <external-files-path
+            name="images"
+            path="Pictures" />
+    </paths>
+</resources>

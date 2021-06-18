@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relTitleBar"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="42dp"
+    >
+
+    <ImageView
+        android:onClick="onViewBackClick"
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_left" />
+
+    <TextView
+        android:text="标题"
+        android:id="@+id/tv_title"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:ellipsize="end"
+        android:maxWidth="240dp"
+        android:lines="1"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/content_text_size_nor" />
+
+    <ImageView
+        android:visibility="gone"
+        android:paddingLeft="10dp"
+        android:scaleType="centerInside"
+        android:paddingRight="20dp"
+        android:src="@drawable/icon_setting"
+        android:layout_centerInParent="true"
+        android:id="@+id/iv_right_img"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+   />
+</RelativeLayout>

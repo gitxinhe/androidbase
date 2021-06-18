@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:id="@+id/relLayoutBase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/fraLayoutHeadView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true" >
+    </FrameLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_above="@+id/fraLayoutContent"
+        style="@style/lineHead"
+        />
+    <RelativeLayout
+        android:background="@color/gray_f2"
+        android:id="@+id/fraLayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fraLayoutHeadView" >
+    </RelativeLayout>
+</RelativeLayout>

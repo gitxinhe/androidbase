@@ -11,6 +11,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi"
+        }
     }
 
     buildTypes {
@@ -32,6 +35,8 @@ dependencies {
     implementation project(path: ':libraryandroid')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //implementation 'com.github.gitxinhe:androidbase:1.0.0'
+   // api 'com.github.gitxinhe:androidbase:1.0.1'
 }

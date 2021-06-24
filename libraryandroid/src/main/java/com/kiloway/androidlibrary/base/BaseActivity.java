@@ -18,6 +18,11 @@ import androidx.annotation.Nullable;
 import com.kiloway.androidlibrary.R;
 import com.kiloway.androidlibrary.R2;
 import com.kiloway.androidlibrary.utils.CustomToast;
+import com.kiloway.commonscanner.base.BeepUtil;
+import com.kiloway.commonscanner.base.Device;
+import com.kiloway.commonscanner.model.EpcInfo;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +33,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
  * Created by 10158 on 2020/12/17.
  */
 
-public abstract class BaseActivity extends SwipeBackActivity {
+public abstract class BaseActivity extends SwipeBackActivity implements Device.OnEventListener{
     public static final String TAG = BaseActivity.class.getSimpleName();
     public BaseActivity context;
     public RelativeLayout mFraLayoutContent;
@@ -52,7 +57,30 @@ public abstract class BaseActivity extends SwipeBackActivity {
         this.context = this;
         init();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        BaseApplication.instance.getReader().setOnEventListener(this);
     }
+    @Override
+    public void onTagReadedEvent(final EpcInfo info) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                BeepUtil.INS.speak();
+                onReceiveEpc(info);
+            }
+        });
+    }
+    @Override
+    public void onAnyTagReadedEvent(final List<EpcInfo> infos) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                BeepUtil.INS.speak();
+                onReceiveAnyEpc(infos);
+            }
+        });
+    }
+    public void onReceiveEpc(EpcInfo epcInfo){};
+    public void onReceiveAnyEpc(List<EpcInfo> epcInfos){};
     @Override
     public Resources getResources() {
         Resources res = super.getResources();

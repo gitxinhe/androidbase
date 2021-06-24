@@ -6,6 +6,11 @@ import android.widget.TextView;
 import com.kiloway.androidlibrary.R;
 import com.kiloway.androidlibrary.R2;
 import com.kiloway.androidlibrary.base.BaseActivity;
+import com.kiloway.androidlibrary.base.BaseApplication;
+import com.kiloway.androidlibrary.base.PickerUtils;
+import com.kiloway.androidlibrary.listener.OnSelectListener;
+import com.kiloway.commonscanner.base.AllDevice;
+import com.kiloway.commonscanner.base.DeviceSetting;
 
 import java.util.List;
 
@@ -36,11 +41,11 @@ public class ReaderSettingActivity extends BaseActivity {
     }
 
     private void init() {
-        /*tvReader.setText(DeviceSetting.getDevice(this));
+        tvReader.setText(DeviceSetting.getDevice(this));
         new Thread(new Runnable() {
             @Override
             public void run() {
-                int power = MyApplication.instance.reader.getPower();
+                final int power = BaseApplication.instance.getReader().getPower();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -48,7 +53,7 @@ public class ReaderSettingActivity extends BaseActivity {
                     }
                 });
             }
-        }).start();*/
+        }).start();
     }
 
     @Override
@@ -63,29 +68,30 @@ public class ReaderSettingActivity extends BaseActivity {
     }
 
     public void llReader(View view) {
-        /*List<String> allDevice = AllDevice.getAllDevice();
+        List<String> allDevice = AllDevice.getAllDevice();
         PickerUtils.showSingPicker(context, allDevice, new OnSelectListener() {
             @Override
             public void onSelect(String selectStr) {
-                if (DeviceSetting.getDevice(context).equals(selectStr)) {
+                /*if (DeviceSetting.getDevice(context).equals(selectStr)) {
                     return;
-                }
+                }*/
+                BaseApplication.instance.getReader().unitReader();
                 DeviceSetting.setCurrentReader(context, selectStr);
-                finish();
-                clearStack(DemoActivity.class);
+                BaseApplication.instance.getReader().init(context);
+                init();
             }
-        });*/
+        });
     }
 
     public void llPower(View view) {
-        /*final List<String> powers = MyApplication.instance.reader.getPowerList();
+        final List<String> powers = BaseApplication.instance.getReader().getPowerList();
         PickerUtils.showSingPicker(context, powers, new OnSelectListener() {
             @Override
             public void onSelect(String selectStr) {
                 if (DeviceSetting.getDevice(context).equals(selectStr)) {
                     return;
                 }
-                boolean isSuccess = MyApplication.instance.reader.setPower(Integer.valueOf(selectStr));
+                boolean isSuccess = BaseApplication.instance.getReader().setPower(Integer.valueOf(selectStr));
                 if (isSuccess) {
                     showToast("设置成功");
                     tvPower.setText(selectStr);
@@ -93,6 +99,6 @@ public class ReaderSettingActivity extends BaseActivity {
                     showToast("设置失败");
                 }
             }
-        });*/
+        });
     }
 }

@@ -25,7 +25,6 @@ public class BaseApplication extends Application {
         super.onCreate();
         instance = this;
         initX5();
-        BeepUtil.INS.initSound(this);
     }
     public Device getReader(){
         return AllDevice.initUHF(this);

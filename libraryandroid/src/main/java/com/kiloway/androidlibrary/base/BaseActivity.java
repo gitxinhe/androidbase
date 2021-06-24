@@ -163,12 +163,12 @@ public abstract class BaseActivity extends SwipeBackActivity implements Device.O
     @Override
     protected void onResume() {
         super.onResume();
-        //BeepUtil.INS.initSound(this);
+        BeepUtil.INS.initSound(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-       //BeepUtil.INS.destroy();
+       BeepUtil.INS.destroy();
     }
 }

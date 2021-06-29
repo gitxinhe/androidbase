@@ -1,7 +1,11 @@
 package com.kiloway.androidbase;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -10,6 +14,7 @@ import android.widget.TextView;
 import com.kiloway.androidlibrary.activity.ReaderSettingActivity;
 import com.kiloway.androidlibrary.base.BaseActivity;
 import com.kiloway.androidlibrary.base.BaseApplication;
+import com.kiloway.commonscanner.base.AllDevice;
 import com.kiloway.commonscanner.base.Constant;
 import com.kiloway.commonscanner.base.DeviceSetting;
 import com.kiloway.commonscanner.model.EpcInfo;
@@ -54,7 +59,7 @@ public class MainActivity extends BaseActivity {
     TextView tvEpc;
     @BindView(R.id.btn_scan)
     Button btnScan;
-
+    MyReceiver myReceiver;
     @Override
     protected int getContentViewResId() {
         return R.layout.activity_demo;
@@ -62,11 +67,19 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        DeviceSetting.setCurrentReader(context, Constant.KLWUH55EH2);
-        //初始化读写器
-        BaseApplication.instance.getReader().init(context);
+        BaseApplication.instance.reader.initReader(context);
+        myReceiver = new MyReceiver();
+        this.registerReceiver(myReceiver, new IntentFilter("readerSetting"));
     }
-
+    public class MyReceiver extends  BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals("readerSetting")){
+                finish();
+                clearStack(MainActivity.class);
+            }
+        }
+    }
     @Override
     protected void initListener() {
 
@@ -96,15 +109,14 @@ public class MainActivity extends BaseActivity {
                 if (isScan) {
                     btnScan.setText("扫描");
                     isScan = false;
-                    BaseApplication.instance.getReader().stopReading();
+                    BaseApplication.instance.reader.stopReading();
                 } else {
                     btnScan.setText("停止");
                     isScan = true;
-                    BaseApplication.instance.getReader().inventoryTag();
+                    BaseApplication.instance.reader.inventoryTag();
                 }
                 break;
             case R.id.ll_loading:
-
                 break;
             case R.id.ll_select1_single:
                 break;
@@ -142,7 +154,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        BaseApplication.instance.getReader().unitReader();
+        unregisterReceiver(myReceiver);
+        BaseApplication.instance.reader.unitReader();
     }
 
 }

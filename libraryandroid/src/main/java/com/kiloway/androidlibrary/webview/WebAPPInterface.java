@@ -8,6 +8,7 @@ import android.webkit.JavascriptInterface;
 
 import com.kiloway.androidlibrary.activity.ReaderSettingActivity;
 import com.kiloway.androidlibrary.base.BaseApplication;
+import com.kiloway.commonscanner.base.AllDevice;
 
 /**
  * @ClassName: WebAPPInterface
@@ -30,12 +31,12 @@ public class WebAPPInterface implements IWebAppInterFace{
     @JavascriptInterface
     @Override
     public void startInventory() {
-        BaseApplication.instance.getReader().inventoryTag();
+        BaseApplication.instance.reader.inventoryTag();
     }
     @JavascriptInterface
     @Override
     public void stopInventory() {
-        BaseApplication.instance.getReader().stopReading();
+        BaseApplication.instance.reader.stopReading();
     }
     @JavascriptInterface
     @Override

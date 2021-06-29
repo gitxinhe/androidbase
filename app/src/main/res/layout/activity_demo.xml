@@ -13,11 +13,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <LinearLayout
+                style="@style/normal_linearLayout"
+                android:layout_marginTop="0dp">
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="扫描标签" />
 
+                <TextView
+                    android:id="@+id/tv_epc"
+                    android:layout_weight="1"
+                    style="@style/normal_textView"
+                    android:gravity="center_vertical" />
+
+                <Button
+                    android:id="@+id/btn_scan"
+                    android:text="扫描"
+                    style="@style/small_button"
+                     />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_loading"
+                style="@style/normal_linearLayout"
+                android:layout_marginTop="0dp">
+                <TextView
+                    style="@style/normal_textView"
+                    android:gravity="right|center_vertical"
+                    android:text="loading" />
+
+                <TextView
+                    style="@style/normal_editText"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_right_gray" />
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/ll_select1_single"
                 style="@style/normal_linearLayout"
-                android:layout_marginTop="0dp">
+               >
                 <TextView
                     style="@style/normal_textView"
                     android:gravity="right|center_vertical"

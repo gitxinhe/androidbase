@@ -22,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    repositories{
+        flatDir{
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -43,7 +48,9 @@ dependencies {
     //图片缩放控件
     api 'com.bm.photoview:library:1.4.1'
     api 'com.tencent.tbs.tbssdk:sdk:43697'
-    api 'com.github.gitxinhe:XScanner:1.0.2'
+    //api 'com.github.gitxinhe:XScanner:1.0.2'
+   // api project(':commonscanner')
     //下拉选择框
+    api(name:'commonscanner-release' , ext:'aar')
     api 'com.contrarywind:Android-PickerView:4.1.9'
 }

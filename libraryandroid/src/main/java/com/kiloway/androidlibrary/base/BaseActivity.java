@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -18,6 +19,7 @@ import androidx.annotation.Nullable;
 import com.kiloway.androidlibrary.R;
 import com.kiloway.androidlibrary.R2;
 import com.kiloway.androidlibrary.utils.CustomToast;
+import com.kiloway.commonscanner.base.AllDevice;
 import com.kiloway.commonscanner.base.BeepUtil;
 import com.kiloway.commonscanner.base.Device;
 import com.kiloway.commonscanner.model.EpcInfo;
@@ -49,6 +51,7 @@ public abstract class BaseActivity extends SwipeBackActivity implements Device.O
     View line;
     private FrameLayout mFraLayoutHeadView;
     private SwipeBackLayout mSwipeBackLayout;
+    public Device reader;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,14 +59,19 @@ public abstract class BaseActivity extends SwipeBackActivity implements Device.O
         ButterKnife.bind(this);
         this.context = this;
         init();
+        initEpcResult();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        BaseApplication.instance.getReader().setOnEventListener(this);
+
+    }
+    public void initEpcResult(){
+        BaseApplication.instance.reader.setOnEventListener(this);
     }
     @Override
     public void onTagReadedEvent(final EpcInfo info) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                Log.e("tag",info.getEpc());
                 BeepUtil.INS.speak();
                 onReceiveEpc(info);
             }

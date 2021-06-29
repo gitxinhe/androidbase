@@ -20,14 +20,13 @@ import com.tencent.smtt.sdk.QbSdk;
  */
 public class BaseApplication extends Application {
     public static BaseApplication instance;
+    public static Device reader;
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
+        reader =AllDevice.getDevice(this);
         initX5();
-    }
-    public Device getReader(){
-        return AllDevice.initUHF(this);
     }
     private void initX5(){
         QbSdk.initX5Environment(this, new QbSdk.PreInitCallback() {

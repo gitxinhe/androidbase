@@ -21,7 +21,7 @@ import com.tencent.smtt.sdk.WebView;
 public class WebViewInitImpl implements IWebViewInit{
     private Activity mActivity;
     private String JS_NAME ="AndroidFunction";
-    private String JS_URL ="http://192.168.1.98:4200";
+    private String JS_URL ="http://192.168.1.78:7004";
     private WebAPPInterface webAPPInterface;
     private IAppWebInterFace appWebInterFaceImp;
     public WebViewInitImpl(Activity activity) {

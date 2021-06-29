@@ -32,7 +32,7 @@ public class WebViewActivity extends BaseActivity {
     @BindView(R.id.webView)
     com.tencent.smtt.sdk.WebView mWebView;
     private WebViewInitImpl webViewInit;
-    private String jsUrl = "http://192.168.1.200:81";
+    private String jsUrl = "http://192.168.1.78:7004";
     @Override
     protected int getContentViewResId() {
         return R.layout.activity_web_view;
@@ -65,7 +65,7 @@ public class WebViewActivity extends BaseActivity {
             }
         });
         //初始化读写器
-        BaseApplication.instance.getReader().init(context);
+        //BaseApplication.instance.getReader().init(context);
     }
     @Override
     protected void initListener() {
@@ -80,7 +80,7 @@ public class WebViewActivity extends BaseActivity {
         String url = this.mWebView.getUrl();
         if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
             //与上次点击返回键时刻作差
-            if (url.contains("home")) {
+            if (url.contains("menu")) {
                 finish();
             } else {
                 mWebView.goBack();
@@ -95,6 +95,6 @@ public class WebViewActivity extends BaseActivity {
         if (mWebView!=null)
             mWebView.destroy();
         super.onDestroy();
-        BaseApplication.instance.getReader().unitReader();
+        //BaseApplication.instance.reader.unitReader();
     }
 }
